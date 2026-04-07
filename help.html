@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help Centre – Travel Guard® Direct Vietnam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- UTILITY BAR -->
+    <div class="utility-bar">
+      <a href="help.html">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+          <circle
+            cx="8"
+            cy="8"
+            r="7.5"
+            stroke="currentColor"
+            stroke-width="1"
+            fill="none"
+          />
+          <text
+            x="8"
+            y="12"
+            text-anchor="middle"
+            font-size="10"
+            fill="currentColor"
+          >
+            ?
+          </text>
+        </svg>
+        Help Centre
+      </a>
+      <a href="contact.html">
+        <svg width="14" height="12" fill="currentColor" viewBox="0 0 16 12">
+          <rect
+            x=".5"
+            y=".5"
+            width="15"
+            height="11"
+            rx="1.5"
+            stroke="currentColor"
+            fill="none"
+          />
+          <path d="M0 2l8 5 8-5" stroke="currentColor" fill="none" />
+        </svg>
+        Contact Us
+      </a>
+      <span>🌏 Vietnam</span>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+      <a class="logo" href="index.html">
+        <img
+          src="https://www.travelguard.com.sg/content/dam/common-logos/zurich/CM_Travel_Guard_v_RGB.svg"
+          alt="Travel Guard – Part of Zurich Cover-More"
+        />
+      </a>
+      <button class="hamburger" onclick="toggleNav()" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="documents.html">Download Documents</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <div class="help-hero">
+      <div class="help-hero-content">
+        <h1>Help Centre</h1>
+        <p>When you need us, we're there.</p>
+      </div>
+    </div>
+
+    <!-- IN THIS SECTION nav -->
+    <div class="help-in-this-section">
+      <strong>IN THIS SECTION</strong>
+      <a href="claims.html">Make a Claim</a><span>|</span
+      ><a href="faq.html">FAQs</a><span>|</span
+      ><a href="contact.html">Contact Us</a>
+    </div>
+
+    <!-- Tool cards -->
+    <div class="help-tools-section">
+      <div class="help-tools-inner">
+        <a
+          class="help-tool-card"
+          href="claims.html"
+          style="text-decoration: none; color: inherit"
+        >
+          <img
+            src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/help-centre/_jcr_content/root/container_copy/container_685868474/container/container/container_1111753596_763862574/image_copy_copy.coreimg.svg/1765490437678/icon-claim.svg"
+            alt="Make a Claim"
+          />
+          <div>
+            <h2>Make a Claim</h2>
+            <p>
+              Start a new claim and upload required documentation using this
+              online tool.
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ section -->
+    <div class="help-faq-section">
+      <div class="help-faq-inner">
+        <h2>Frequently Asked Travel Insurance Questions</h2>
+        <div class="faq-list" style="max-width: 100%">
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              Who can purchase Travel Guard® Direct and is there an age
+              restriction?
+              <svg
+                class="faq-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="faq-answer">
+              You can purchase Travel Guard® Direct if you are ordinarily
+              resident in Vietnam with full rights to enter and return to
+              Vietnam regardless of medical status; you are returning to or
+              intending to return to Vietnam at the end of your travel; and your
+              pre-trip arrangements must be made and paid for, and your trip
+              must commence from Vietnam.<br /><br />Please note if you are
+              above 70 years of age, the sum insured limit for some benefits
+              including Overseas Medical Expenses and Personal Accident is
+              lower. Please refer to the policy wording for full details.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              What is the maximum trip period covered under Travel Guard® Direct
+              for return per-trip and annual multi-trip plans?
+              <svg
+                class="faq-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="faq-answer">
+              The maximum trip period covered by Travel Guard® Direct is up
+              to:<br />i. 182 days for return per-trip plans; or<br />ii. 90
+              days for any one trip under an annual multi-trip plan.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              What is the difference between a per-trip policy and an annual
+              multi-trip policy?
+              <svg
+                class="faq-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="faq-answer">
+              A per-trip policy commences cover from the time you depart Vietnam
+              and ceases upon your arrival in Vietnam or the policy end date,
+              whichever comes first. The maximum period of coverage for an
+              overseas trip is 182 consecutive days.<br /><br />An annual
+              multi-trip policy covers unlimited number of overseas trips, for
+              up to 90 consecutive days each, within the policy year.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              What region do I select if I am going on a cruise?
+              <svg
+                class="faq-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="faq-answer">
+              If you are travelling on a cruise, you must select the highest
+              covered region based on the furthest destination of your cruise.
+              For example, if your cruise will be stopping in Thailand (Region
+              1) and Australia (Region 2), you must select Region 2 for
+              Australia as that is the furthest destination of your cruise.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              How do I purchase Travel Guard® Direct?
+              <svg
+                class="faq-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="faq-answer">
+              You can purchase Travel Guard® Direct via our website. We accept
+              payment by credit card (Mastercard or Visa).
+            </div>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 32px">
+          <a
+            href="faq.html"
+            style="
+              color: #2167ae;
+              font-size: 0.95rem;
+              text-decoration: underline;
+            "
+            >Read our full FAQs</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Support section -->
+    <div class="help-support-section">
+      <div style="max-width: 900px; margin: 0 auto">
+        <h2>Support</h2>
+        <div class="help-support-inner">
+          <div class="help-support-item">
+            <img
+              src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/help-centre/_jcr_content/root/container_copy/container_1430576660_1839299720/container/container_1111753596/container_1524513960/image_copy.coreimg.svg/1765490461365/location-icon.svg"
+              alt=""
+            />
+            <div>
+              <h2>Customer Service Centre</h2>
+              <a href="tel:+6560543500">+65 6054 3500</a>
+              <a href="mailto:SGTGcustomercare@travelguard.com"
+                >SGTGcustomercare@travelguard.com</a
+              >
+              <p>
+                Operating hours:<br />Mondays to Fridays, excluding Public
+                Holidays<br />9.00a.m. - 5.30p.m.
+              </p>
+            </div>
+          </div>
+          <div class="help-support-item">
+            <img
+              src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/help-centre/_jcr_content/root/container_copy/container_1430576660_1839299720/container/container_1111753596/container/container_1111753596/image_copy_copy.coreimg.svg/1766738686136/icon-phone.svg"
+              alt=""
+            />
+            <div>
+              <h2>24/7 Emergency Travel Assistance</h2>
+              <p>24-Hour Hotline:</p>
+              <a href="tel:+6560543499">+65 6054 3499</a>
+              <a href="mailto:SGTGassistance@travelguard.com"
+                >SGTGassistance@travelguard.com</a
+              >
+            </div>
+          </div>
+          <div class="help-support-item">
+            <img
+              src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/help-centre/_jcr_content/root/container_copy/container_1430576660_1839299720/container/container_1111753596_1739377816/container_1524513960/image_copy.coreimg.svg/1765490447925/icon-mail.svg"
+              alt=""
+            />
+            <div>
+              <h2>Travel Claims</h2>
+              <a href="tel:+6560543500">+65 6054 3500</a>
+              <a href="mailto:SGTGclaims@travelguard.com"
+                >SGTGclaims@travelguard.com</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img
+            src="https://www.travelguard.com.sg/content/dam/common-logos/zurich/CM_Travel_Guard_v_RGB.svg"
+            alt="Travel Guard"
+          />
+          <p>
+            The policy is underwritten by Zurich Insurance Company Ltd (Vietnam
+            Branch). Company Registration Number T08FC7171K, a licensed insurer
+            authorised by the Monetary Authority of Vietnam (MAS). Travel
+            assistance and claim services are administered by Travel Guard Asia
+            Pacific Pte Ltd (TGAP).
+          </p>
+        </div>
+        <div class="footer-col">
+          <h5>Travel Insurance</h5>
+          <ul>
+            <li><a href="plans.html">Our Plans</a></li>
+            <li><a href="plans.html">Cruise Vacation Benefits</a></li>
+            <li><a href="plans.html">Golf &amp; Sporting Equipment</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Travel Guard</h5>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Self Service</h5>
+          <ul>
+            <li><a href="help.html">Help Centre</a></li>
+            <li><a href="claims.html">Claims</a></li>
+            <li><a href="documents.html">Download Documents</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          Copyright &copy; 2026, Travel Guard Vietnam &nbsp;|&nbsp;
+          <a href="#">Terms of Use</a> &nbsp;|&nbsp;
+          <a href="#">Privacy</a> &nbsp;|&nbsp;
+          <a href="#">Personal Data Protection Policy</a> &nbsp;|&nbsp;
+          <a href="#">Legal Notice</a> &nbsp;|&nbsp;
+          <a href="#">Cookie Policy</a>
+        </p>
+        <p style="margin-top: 8px">
+          Protected under the Policy Owners' Protection Scheme administered by
+          the Vietnam Deposit Insurance Corporation (SDIC).
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      function toggleFaq(btn) {
+        const item = btn.closest(".faq-item");
+        const isOpen = item.classList.contains("open");
+        item
+          .closest(".faq-list, .section")
+          .querySelectorAll(".faq-item.open")
+          .forEach((i) => i.classList.remove("open"));
+        if (!isOpen) item.classList.add("open");
+      }
+      function toggleNav() {
+        const nav = document.getElementById("main-nav");
+        const header = document.querySelector("header");
+        nav.classList.toggle("open");
+        header.classList.toggle("nav-open");
+      }
+      document
+        .getElementById("main-nav")
+        .addEventListener("click", function (e) {
+          if (e.target.tagName === "A") {
+            this.classList.remove("open");
+            document.querySelector("header").classList.remove("nav-open");
+          }
+        });
+    </script>
+  </body>
+</html>

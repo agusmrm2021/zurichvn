@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/agusb/Downloads/**)",
+      "Bash(python -m markitdown \"Travel_Insurance_Mockup \\(1\\).pptx\")",
+      "Bash(pip install:*)",
+      "mcp__puppeteer__puppeteer_navigate",
+      "mcp__puppeteer__puppeteer_screenshot",
+      "mcp__puppeteer__puppeteer_evaluate",
+      "mcp__Claude_Preview__preview_start",
+      "mcp__puppeteer__puppeteer_click",
+      "Bash(start python:*)",
+      "Bash(python -m http.server 3000)",
+      "WebFetch(domain:www.travelguard.com.sg)"
+    ]
+  }
+}
