@@ -66,7 +66,7 @@ nav a:hover, nav a.active { background: var(--light-bg); color: var(--teal-dark)
 
 /* ── HERO ── */
 .hero {
-  background: url('/images/singapore-dtc-hero.jpg') center 20%/cover no-repeat;
+  background: url('/images/homepage-hero.jpg') center 20%/cover no-repeat;
   min-height: 560px;
   display: flex;
   align-items: center;
@@ -182,7 +182,7 @@ nav a:hover, nav a.active { background: var(--light-bg); color: var(--teal-dark)
 }
 
 /* ── PLAN CARDS (homepage) ── */
-.plan-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 20px; }
+.plan-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; margin-top: 20px; }
 .plan-card {
   background: #fff;
   border-radius: 12px;
@@ -363,17 +363,23 @@ nav a:hover, nav a.active { background: var(--light-bg); color: var(--teal-dark)
 
 /* ── CLAIMS PAGE ── */
 .claims-page-wrap { max-width: 760px; margin: 0 auto; padding: 60px 30px; }
-.claims-page-wrap h1 { font-size: 1.9rem; font-weight: 700; color: var(--navy); margin-bottom: 28px; }
-.claims-expect-item { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 22px; }
-.claims-expect-item img { width: 36px; height: 36px; flex-shrink: 0; margin-top: 2px; }
-.claims-expect-item p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
-.claims-expect-item p strong { color: var(--navy); }
-.claims-docs-section { margin-top: 48px; }
-.claims-docs-section h2 { font-size: 1.4rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-.claims-docs-section > p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px; }
-.claims-docs-section h3 { font-size: 1rem; font-weight: 700; color: #2167AE; margin-bottom: 10px; }
-.claims-docs-section ul { list-style: disc; padding-left: 24px; }
-.claims-docs-section ul li { font-size: 0.95rem; color: #2167AE; margin-bottom: 6px; }
+.claims-page-wrap h1 { font-size: 1.9rem; font-weight: 700; color: var(--navy); margin-bottom: 32px; }
+.claims-step { display: flex; gap: 20px; margin-bottom: 36px; align-items: flex-start; }
+.claims-step-num { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: var(--navy); color: #fff; font-size: 1rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+.claims-step-body { flex: 1; }
+.claims-step-body > p { font-size: 0.95rem; color: var(--text); line-height: 1.65; margin-bottom: 12px; }
+.claims-alpha-list { list-style: none; padding-left: 0; margin: 0 0 12px; counter-reset: alpha-counter; }
+.claims-alpha-list li { font-size: 0.95rem; color: var(--text); line-height: 1.65; margin-bottom: 8px; padding-left: 28px; position: relative; }
+.claims-alpha-list li::before { content: "(" counter(alpha-counter, lower-alpha) ")"; counter-increment: alpha-counter; position: absolute; left: 0; color: var(--navy); font-weight: 600; }
+.claims-contact-box { background: #f0f6fc; border-left: 4px solid #2167AE; border-radius: 4px; padding: 16px 20px; margin: 12px 0 16px; }
+.claims-contact-box p { font-size: 0.95rem; color: var(--text); line-height: 1.65; margin: 0 0 4px; }
+.claims-contact-box a { color: #2167AE; }
+.claims-docs-section { margin-top: 20px; }
+.claims-docs-section h3 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin: 20px 0 8px; }
+.claims-docs-section ul { list-style: disc; padding-left: 24px; margin: 0 0 4px; }
+.claims-docs-section ul li { font-size: 0.93rem; color: var(--text); line-height: 1.6; margin-bottom: 5px; }
+.claims-remark { font-size: 0.88rem; color: var(--text-muted); font-style: italic; margin: 4px 0 0; }
+.claims-disclaimer { margin-top: 40px; padding: 16px 20px; background: #f8f8f8; border: 1px solid var(--border); border-radius: 6px; font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; }
 
 /* ── CONTACT PAGE ── */
 .contact-hero { display: flex; background: #003D6E; min-height: 240px; overflow: hidden; }
