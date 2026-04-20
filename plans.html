@@ -100,606 +100,279 @@
       </p>
     </div>
 
-    <!-- Basic Plan -->
-    <div class="plan-detail-wrap bg-grey">
-      <div class="plan-detail">
-        <div class="plan-detail-left plan-img-circle">
-          <img
-            src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy_copy/container/container_1010965537/image.coreimg.png/1765537649476/basicplan-oval.png"
-            alt="Basic Plan"
-          />
-          <h2>Basic Plan</h2>
-          <h3>Smart and Simple Travel Insurance for Quick Getaways</h3>
-          <p>
-            Perfect for spontaneous trips, regional travel, or budget-friendly
-            escapes. The Basic Plan keeps things simple by covering the
-            essential risks that can derail your holiday with clear benefits and
-            no unnecessary extras. It's affordable travel protection that lets
-            you travel light but not unprotected.
-          </p>
-        </div>
-        <div class="plan-detail-right">
-          <h3 class="plan-why">Why Vietnamese choose the Basic Plan</h3>
-          <p class="plan-benefits-label">Key Travel Insurance Benefits</p>
-          <div class="plan-icon-list">
-            <div class="plan-icon-item">
-              <img
-                src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy_copy/container/container/container/image.coreimg.svg/1765490453386/icon-doctor.svg"
-                alt=""
-              />
-              <p>
-                Up to
-                <strong>S$100,000 in overseas medical coverage</strong> (under
-                age 70) - essential even for short regional trips.
-              </p>
-            </div>
-            <div class="plan-icon-item">
-              <img
-                src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy_copy/container/container/container_copy_906823305/image.coreimg.svg/1765490449797/icon-alert.svg"
-                alt=""
-              />
-              <p>
-                <strong>Emergency evacuation up to S$50,000</strong>, an
-                important safety net when travelling somewhere unfamiliar.
-              </p>
-            </div>
-            <div class="plan-icon-item">
-              <img
-                src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy_copy/container/container/container_copy_312379668/image.coreimg.svg/1765490435021/icon-baggage.svg"
-                alt=""
-              />
-              <p>
-                <strong>Trip cancellation up to S$5,000</strong> to protect
-                pre-paid bookings when plans change unexpectedly.
-              </p>
-            </div>
-            <div class="plan-icon-item">
-              <img
-                src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy_copy/container/container/container_copy_312379668/image.coreimg.svg/1765490435021/icon-baggage.svg"
-                alt=""
-              />
-              <p>
-                <strong>Protection for lost baggage and travel documents</strong
-                >, covering realistic everyday travel mishaps.
-              </p>
-            </div>
-            <div class="plan-icon-item">
-              <img
-                src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy_copy/container/container/container_copy_31237/image.coreimg.svg/1765490457392/icon-money.svg"
-                alt=""
-              />
-              <p>
-                <strong>Affordable, no-frills coverage</strong> for travellers
-                who want essential protection at a price that fits their budget.
-              </p>
-            </div>
-            <div class="plan-icon-item">
-              <img
-                src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy_copy/container/container/container_copy_31237_471275997/image.coreimg.svg/1765490463976/icon-laptop.svg"
-                alt=""
-              />
-              <p>
-                <strong>Quick and hassle-free online claims</strong> for a
-                smoother experience.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- Benefits Table -->
+    <div class="benefits-section">
+      <style>
+        .benefits-section {
+          background: #f4f6fa;
+          padding: 48px 20px 64px;
+        }
+        .benefits-inner {
+          max-width: 1100px;
+          margin: 0 auto;
+        }
+        .benefits-section h2 {
+          text-align: center;
+          font-size: 1.6rem;
+          color: #1a3a6b;
+          margin-bottom: 8px;
+        }
+        .benefits-note {
+          text-align: center;
+          color: #666;
+          font-size: 0.88rem;
+          margin-bottom: 28px;
+        }
+        .benefits-table-wrap {
+          overflow-x: auto;
+          border-radius: 12px;
+          box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+          background: #fff;
+        }
+        .benefits-table {
+          width: 100%;
+          border-collapse: collapse;
+          font-size: 0.875rem;
+          min-width: 680px;
+        }
+        .benefits-table thead tr {
+          background: #1a3a6b;
+          color: #fff;
+        }
+        .benefits-table thead th {
+          padding: 14px 16px;
+          text-align: center;
+          font-weight: 700;
+          font-size: 0.95rem;
+          letter-spacing: 0.02em;
+        }
+        .benefits-table thead th.col-benefit {
+          text-align: left;
+          width: 38%;
+        }
+        .benefits-table thead th.col-premier { background: #1a3a6b; }
+        .benefits-table thead th.col-superior { background: #1d4a85; }
+        .benefits-table thead th.col-classic { background: #20529a; }
+        .benefits-table thead th.col-lite { background: #235bb0; }
+        .bt-part {
+          background: #2167ae;
+          color: #fff;
+          font-weight: 700;
+          font-size: 0.85rem;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+        }
+        .bt-part td {
+          padding: 10px 16px;
+        }
+        .bt-section {
+          background: #dce8f7;
+          color: #1a3a6b;
+          font-weight: 600;
+        }
+        .bt-section td {
+          padding: 9px 16px;
+          font-size: 0.85rem;
+        }
+        .bt-subsection {
+          background: #eef3fb;
+          color: #2a4a7f;
+          font-weight: 600;
+          font-style: italic;
+        }
+        .bt-subsection td {
+          padding: 8px 16px 8px 28px;
+          font-size: 0.82rem;
+        }
+        .bt-row td {
+          padding: 9px 16px;
+          border-bottom: 1px solid #eef0f5;
+          color: #333;
+          vertical-align: middle;
+        }
+        .bt-row:hover { background: #f8faff; }
+        .bt-row td:first-child {
+          padding-left: 28px;
+          color: #444;
+        }
+        .bt-row td.sub-indent {
+          padding-left: 44px;
+          color: #555;
+        }
+        .bt-row td:not(:first-child) {
+          text-align: right;
+          font-variant-numeric: tabular-nums;
+          white-space: nowrap;
+        }
+        .val-na {
+          color: #bbb;
+          font-style: italic;
+        }
+        .val-inc {
+          color: #1a8a3a;
+          font-weight: 600;
+        }
+        .val-inc::before { content: "✓ "; }
+        .bt-row:nth-child(even) { background: #fafbfd; }
+        .bt-row:nth-child(even):hover { background: #f4f7ff; }
+      </style>
 
-    <!-- Enhanced Plan -->
-    <div class="plan-detail">
-      <div class="plan-detail-left">
-        <img
-          src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy_copy__534337922/container/container_1010965537/image.coreimg.jpeg/1765490440523/enhancedplan-oval.jpeg"
-          alt="Enhanced Plan"
-        />
-        <h2>Enhanced Plan</h2>
-        <h3>Balanced Travel Insurance Coverage for Confident Travellers</h3>
-        <p>
-          Ideal for family holidays, long-haul trips or destinations with higher
-          medical care costs. The Enhanced Plan offers comprehensive protection
-          with stronger medical benefits, broader trip coverage and support that
-          continues even after you return to Vietnam.
-        </p>
-      </div>
-      <div class="plan-detail-right">
-        <h3 class="plan-why">Why Vietnamese choose the Enhanced Plan</h3>
-        <p class="plan-benefits-label">Key Travel Insurance Benefits</p>
-        <div class="plan-icon-list">
-          <div class="plan-icon-item">
-            <img
-              src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy_copy__534337922/container/container/container/image.coreimg.svg/1765490453386/icon-doctor.svg"
-              alt=""
-            />
-            <p>
-              <strong>S$1,000,000 in overseas medical coverage</strong> (under
-              age 70), suitable for long-haul destinations and countries with
-              higher healthcare costs.
-            </p>
-          </div>
-          <div class="plan-icon-item">
-            <img
-              src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy_copy__534337922/container/container/container_copy_906823305/image.coreimg.svg/1765490449797/icon-alert.svg"
-              alt=""
-            />
-            <p>
-              <strong>Unlimited emergency medical evacuation</strong>, providing
-              full support in the event of a serious incident overseas.
-            </p>
-          </div>
-          <div class="plan-icon-item">
-            <img
-              src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy_copy__534337922/container/container/container_copy_312379668/image.coreimg.svg/1765490435021/icon-baggage.svg"
-              alt=""
-            />
-            <p>
-              <strong
-                >Coverage for trip interruption, early return, and travel
-                supplier financial default</strong
-              >, protecting more complex or prepaid travel plans.
-            </p>
-          </div>
-          <div class="plan-icon-item">
-            <img
-              src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy_copy__534337922/container/container/container_copy_312379668/image.coreimg.svg/1765490443678/icon-pain.svg"
-              alt=""
-            />
-            <p>
-              <strong
-                >Coverage for medical treatment in Vietnam after returning
-                home</strong
-              >, a valuable safety net many basic plans don't offer.
-            </p>
-          </div>
-          <div class="plan-icon-item">
-            <img
-              src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy_copy__534337922/container/container/container_copy_31237/image.coreimg.svg/1765490435021/icon-baggage.svg"
-              alt=""
-            />
-            <p>
-              <strong>Higher limits for baggage and travel delays</strong>,
-              ideal for families or travellers carrying personal tech and
-              shopping abroad.
-            </p>
-          </div>
-          <div class="plan-icon-item">
-            <img
-              src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy_copy__534337922/container/container/container_copy_31237_471275997/image.coreimg.svg/1765490463976/icon-laptop.svg"
-              alt=""
-            />
-            <p>
-              <strong>Quick and hassle-free online claims</strong> for a
-              smoother experience.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+      <div class="benefits-inner">
+        <h2>Plan Benefits &amp; Sum Insured</h2>
+        <p class="benefits-note">All amounts in VND (Vietnamese Đồng)</p>
+        <div class="benefits-table-wrap">
+          <table class="benefits-table">
+            <thead>
+              <tr>
+                <th class="col-benefit">Benefit</th>
+                <th class="col-premier">Premier</th>
+                <th class="col-superior">Superior</th>
+                <th class="col-classic">Classic</th>
+                <th class="col-lite">Lite</th>
+              </tr>
+            </thead>
+            <tbody>
 
-    <!-- Supreme Plan -->
-    <div class="plan-detail-wrap bg-grey">
-      <div class="plan-detail">
-        <div class="plan-detail-left">
-          <img
-            src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy_copy__984661282/container/container_1010965537/image.coreimg.png/1765537828411/supremeplan-oval.png"
-            alt="Supreme Plan"
-          />
-          <h2>Supreme Plan</h2>
-          <h3>Premium Travel Insurance for No-Compromise Travel Coverage</h3>
-          <p>
-            Designed for travellers who appreciate higher-tier protection. The
-            Supreme Plan delivers elevated benefits ideal for long-haul journeys
-            to destinations such as the U.S., Europe and Japan or for cruise
-            travel. With exceptional medical limits and enhanced financial
-            safeguards, this plan is built for travellers who value a smoother,
-            more secure experience wherever they go.
-          </p>
-        </div>
-        <div class="plan-detail-right">
-          <h3 class="plan-why">Why Vietnamese choose the Supreme Plan</h3>
-          <p class="plan-benefits-label">Key Travel Insurance Benefits</p>
-          <div class="plan-icon-list">
-            <div class="plan-icon-item">
-              <img
-                src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy_copy__984661282/container/container/container/image.coreimg.svg/1765490453386/icon-doctor.svg"
-                alt=""
-              />
-              <p>
-                <strong>S$2,000,000 in overseas medical coverage</strong> (under
-                age 70), ideal for destinations with very high healthcare costs
-                such as the U.S., Europe and Japan.
-              </p>
-            </div>
-            <div class="plan-icon-item">
-              <img
-                src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy_copy__984661282/container/container/container_copy_906823305/image.coreimg.svg/1765490449797/icon-alert.svg"
-                alt=""
-              />
-              <p>
-                <strong>Unlimited emergency evacuation</strong>, and extensive
-                support benefits for accompanying travellers and dependents.
-              </p>
-            </div>
-            <div class="plan-icon-item">
-              <img
-                src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy_copy__984661282/container/container/container_copy_284617641/image.coreimg.svg/1765490457392/icon-money.svg"
-                alt=""
-              />
-              <p>
-                <strong>Premium financial protection</strong>, including credit
-                card indemnity and enhanced personal liability up to
-                S$1,000,000.
-              </p>
-            </div>
-            <div class="plan-icon-item">
-              <img
-                src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy_copy__984661282/container/container/container_copy_31237/image.coreimg.svg/1765490435021/icon-baggage.svg"
-                alt=""
-              />
-              <p>
-                <strong
-                  >Higher coverage for baggage, fraudulent credit card use, and
-                  travel documents</strong
-                >
-                designed for worry-free travel.
-              </p>
-            </div>
-            <div class="plan-icon-item">
-              <img
-                src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy_copy__984661282/container/container/container_copy_31237/image.coreimg.svg/1765490435021/icon-baggage.svg"
-                alt=""
-              />
-              <p>
-                <strong>Highest trip cancellation and alteration limits</strong
-                >, with Replacement of Traveller benefit for pre-departure
-                needs.
-              </p>
-            </div>
-            <div class="plan-icon-item">
-              <img
-                src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy_copy__984661282/container/container/container_copy_31237_471275997/image.coreimg.svg/1765490463976/icon-laptop.svg"
-                alt=""
-              />
-              <p>
-                <strong>Quick and hassle-free online claims</strong> for a
-                smoother experience.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+              <!-- PART A -->
+              <tr class="bt-part"><td colspan="5">Part A – Medical and Associated Benefits</td></tr>
 
-    <!-- Compare Side-by-Side -->
-    <div class="compare-section">
-      <div class="compare-section-inner">
-        <h2>Compare Travel Insurance Plans Side-by-Side</h2>
-        <p class="compare-sub">
-          Each trip is different - your coverage should be too. Compare our
-          travel insurance plans to find the level of protection that fits your
-          destination, activities and travel style.
-        </p>
-        <div class="compare-cards">
-          <!-- Basic -->
-          <div class="compare-card">
-            <div class="compare-card-img">
-              <img
-                src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy/container_201306559_/container/container/image.coreimg.jpeg/1765537896037/card-basic-image.jpeg"
-                alt="Basic Plan"
-              />
-            </div>
-            <div class="compare-card-body">
-              <h3>Basic Plan</h3>
-              <p class="card-sub">Smart protection for short getaways</p>
-              <ul class="compare-card-checklist">
-                <li>
-                  <img
-                    src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy/container_201306559_/container/container/container_748395029/container/container_copy/image.coreimg.svg/1769172508534/tick.svg"
-                    alt="✓"
-                  /><span>Overseas Medical Coverage up to S$100,000</span>
-                </li>
-                <li>
-                  <img
-                    src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy/container_201306559_/container/container/container_748395029/container/container_copy/image.coreimg.svg/1769172508534/tick.svg"
-                    alt="✓"
-                  /><span>Trip Cancellation up to S$5,000</span>
-                </li>
-                <li>
-                  <img
-                    src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy/container_201306559_/container/container/container_748395029/container/container_copy/image.coreimg.svg/1769172508534/tick.svg"
-                    alt="✓"
-                  /><span>Emergency Evacuation up to S$50,000</span>
-                </li>
-                <li>
-                  <img
-                    src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy/container_201306559_/container/container/container_748395029/container/container_copy/image.coreimg.svg/1769172508534/tick.svg"
-                    alt="✓"
-                  /><span>Lost Baggage and Travel Documents</span>
-                </li>
-                <li>
-                  <img
-                    src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy/container_201306559_/container/container/container_748395029/container/container_copy/image.coreimg.svg/1769172508534/tick.svg"
-                    alt="✓"
-                  /><span>Affordable, no-frills coverage</span>
-                </li>
-                <li>
-                  <img
-                    src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy/container_201306559_/container/container/container_748395029/container/container_copy/image.coreimg.svg/1769172508534/tick.svg"
-                    alt="✓"
-                  /><span>Quick and hassle-free online claims</span>
-                </li>
-              </ul>
-            </div>
-            <div class="compare-card-popular">Popular Coverages</div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Trip Cancellation</div>
-              <div class="cov-val">
-                <span class="tick">✓</span> Up to S$5,000
-              </div>
-            </div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Trip Alteration</div>
-              <div class="cov-val not-included">
-                <span class="cross">✕</span> Not Included
-              </div>
-            </div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Replacement of Traveller</div>
-              <div class="cov-val not-included">
-                <span class="cross">✕</span> Not Included
-              </div>
-            </div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Personal Baggage Items</div>
-              <div class="cov-val">
-                <span class="tick">✓</span> Up to S$1,500
-              </div>
-            </div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Baggage Delay</div>
-              <div class="cov-val not-included">
-                <span class="cross">✕</span> Not Included
-              </div>
-            </div>
-            <div class="compare-med-header">
-              Medical and Associated Expenses
-            </div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Overseas Medical Expenses</div>
-              <div class="cov-val">
-                <span class="tick">✓</span> Up to S$100,000
-              </div>
-            </div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Medical Emergency</div>
-              <div class="cov-val">
-                <span class="tick">✓</span> Up to S$50,000 Evacuation
-              </div>
-            </div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Follow-Up Medical Care in Vietnam</div>
-              <div class="cov-val not-included">
-                <span class="cross">✕</span> Not included
-              </div>
-            </div>
-          </div>
+              <tr class="bt-section"><td colspan="5">Section 1 – Medical Expenses Incurred Overseas</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Under 65 Years</td><td>3,000,000,000</td><td>2,000,000,000</td><td>1,000,000,000</td><td>600,000,000</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Aged 65 Years or Older</td><td>1,000,000,000</td><td>1,000,000,000</td><td>500,000,000</td><td>300,000,000</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Children in a Family Plan</td><td>3,000,000,000</td><td>2,000,000,000</td><td>1,000,000,000</td><td>600,000,000</td></tr>
 
-          <!-- Enhanced -->
-          <div class="compare-card">
-            <div class="compare-card-img">
-              <img
-                src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/home/_jcr_content/root/container/container_copy_copy/container_copy/image.coreimg.jpeg/1765490425379/card-enhanced-image.jpeg"
-                alt="Enhanced Plan"
-              />
-            </div>
-            <div class="compare-card-body">
-              <h3>Enhanced Plan</h3>
-              <p class="card-sub">
-                Strong coverage for families and long-haul trips
-              </p>
-              <ul class="compare-card-checklist">
-                <li>
-                  <img
-                    src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy/container_201306559_/container/container/container_748395029/container/container_copy/image.coreimg.svg/1769172508534/tick.svg"
-                    alt="✓"
-                  /><span>Overseas Medical Coverage up to S$1,000,000</span>
-                </li>
-                <li>
-                  <img
-                    src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy/container_201306559_/container/container/container_748395029/container/container_copy/image.coreimg.svg/1769172508534/tick.svg"
-                    alt="✓"
-                  /><span
-                    >Trip interruption, Early Return and Travel Supplier</span
-                  >
-                </li>
-                <li>
-                  <img
-                    src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy/container_201306559_/container/container/container_748395029/container/container_copy/image.coreimg.svg/1769172508534/tick.svg"
-                    alt="✓"
-                  /><span>Unlimited Emergency Evacuation</span>
-                </li>
-                <li>
-                  <img
-                    src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy/container_201306559_/container/container/container_748395029/container/container_copy/image.coreimg.svg/1769172508534/tick.svg"
-                    alt="✓"
-                  /><span>Higher Travel Delays and Baggage Limits</span>
-                </li>
-                <li>
-                  <img
-                    src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy/container_201306559_/container/container/container_748395029/container/container_copy/image.coreimg.svg/1769172508534/tick.svg"
-                    alt="✓"
-                  /><span>Medical Treatment Follow Up in Vietnam</span>
-                </li>
-                <li>
-                  <img
-                    src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy/container_201306559_/container/container/container_748395029/container/container_copy/image.coreimg.svg/1769172508534/tick.svg"
-                    alt="✓"
-                  /><span>Quick and hassle-free online claims</span>
-                </li>
-              </ul>
-            </div>
-            <div class="compare-card-popular">Popular Coverages</div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Trip Cancellation</div>
-              <div class="cov-val">
-                <span class="tick">✓</span> Up to S$15,000
-              </div>
-            </div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Trip Alteration</div>
-              <div class="cov-val">
-                <span class="tick">✓</span> Pre-departure - Up to S$1,000
-              </div>
-            </div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Replacement of Traveller</div>
-              <div class="cov-val not-included">
-                <span class="cross">✕</span> Not Included
-              </div>
-            </div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Personal Baggage Items</div>
-              <div class="cov-val">
-                <span class="tick">✓</span> Up to S$2,500
-              </div>
-            </div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Baggage Delay</div>
-              <div class="cov-val">
-                <span class="tick">✓</span> S$100 every 6h up to S$600
-              </div>
-            </div>
-            <div class="compare-med-header">
-              Medical and Associated Expenses
-            </div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Overseas Medical Expenses</div>
-              <div class="cov-val">
-                <span class="tick">✓</span> Up to S$1,000,000
-              </div>
-            </div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Medical Emergency</div>
-              <div class="cov-val">
-                <span class="tick">✓</span> Unlimited Evacuation
-              </div>
-            </div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Follow-Up Medical Care in Vietnam</div>
-              <div class="cov-val">
-                <span class="tick">✓</span> Up to S$25,000 illness &amp; injury
-              </div>
-            </div>
-          </div>
+              <tr class="bt-section"><td colspan="5">Section 2 – Post Trip Medical Expenses Incurred in Vietnam</td></tr>
+              <tr class="bt-subsection"><td colspan="5">2a. For Injury Sustained Overseas and for Sickness Sustained Overseas Where We Evacuated You</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Under 65 Years</td><td>300,000,000</td><td>200,000,000</td><td>100,000,000</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Aged 65 Years or Older</td><td>30,000,000</td><td>30,000,000</td><td>15,000,000</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Children in a Family Plan</td><td>300,000,000</td><td>200,000,000</td><td>100,000,000</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-subsection"><td colspan="5">2b. For Sickness Sustained Overseas Without Evacuation</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Under 65 Years</td><td>90,000,000</td><td>60,000,000</td><td>30,000,000</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Aged 65 Years or Older</td><td>10,000,000</td><td>10,000,000</td><td>5,000,000</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Children in a Family Plan</td><td>90,000,000</td><td>60,000,000</td><td>30,000,000</td><td class="val-na">N/A</td></tr>
 
-          <!-- Supreme -->
-          <div class="compare-card">
-            <div class="compare-card-img">
-              <img
-                src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/home/_jcr_content/root/container/container_copy_copy/container_copy_copy/image.coreimg.jpeg/1765490428495/card-supreme-image.jpeg"
-                alt="Supreme Plan"
-              />
-            </div>
-            <div class="compare-card-body">
-              <h3>Supreme Plan</h3>
-              <p class="card-sub">
-                Premium coverage for a smoother and more secure travel
-                experience. Ideal for U.S., Europe and Japan.
-              </p>
-              <ul class="compare-card-checklist">
-                <li>
-                  <img
-                    src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy/container_201306559_/container/container/container_748395029/container/container_copy/image.coreimg.svg/1769172508534/tick.svg"
-                    alt="✓"
-                  /><span>Overseas Medical Coverage up to S$2,000,000</span>
-                </li>
-                <li>
-                  <img
-                    src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy/container_201306559_/container/container/container_748395029/container/container_copy/image.coreimg.svg/1769172508534/tick.svg"
-                    alt="✓"
-                  /><span>Highest Trip Cancellation and Alteration Limits</span>
-                </li>
-                <li>
-                  <img
-                    src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy/container_201306559_/container/container/container_748395029/container/container_copy/image.coreimg.svg/1769172508534/tick.svg"
-                    alt="✓"
-                  /><span>Unlimited Emergency Evacuation</span>
-                </li>
-                <li>
-                  <img
-                    src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy/container_201306559_/container/container/container_748395029/container/container_copy/image.coreimg.svg/1769172508534/tick.svg"
-                    alt="✓"
-                  /><span>Coverage for Baggage and Travel Documents</span>
-                </li>
-                <li>
-                  <img
-                    src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy/container_201306559_/container/container/container_748395029/container/container_copy/image.coreimg.svg/1769172508534/tick.svg"
-                    alt="✓"
-                  /><span>Premium Financial Protection</span>
-                </li>
-                <li>
-                  <img
-                    src="https://www.travelguard.com.sg/content/purchase/travelguard/sg/en/travel-insurance/singapore-plans/_jcr_content/root/container_copy/container_201306559_/container/container/container_748395029/container/container_copy/image.coreimg.svg/1769172508534/tick.svg"
-                    alt="✓"
-                  /><span>Quick and hassle-free online claims</span>
-                </li>
-              </ul>
-            </div>
-            <div class="compare-card-popular">Popular Coverages</div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Trip Cancellation</div>
-              <div class="cov-val">
-                <span class="tick">✓</span> Up to S$10,000
-              </div>
-            </div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Trip Alteration</div>
-              <div class="cov-val">
-                <span class="tick">✓</span> Pre-departure - Up to S$2,000
-              </div>
-            </div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Replacement of Traveller</div>
-              <div class="cov-val">
-                <span class="tick">✓</span> Pre-departure - Up to S$1,000
-              </div>
-            </div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Personal Baggage Items</div>
-              <div class="cov-val">
-                <span class="tick">✓</span> Up to S$5,000
-              </div>
-            </div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Baggage Delay</div>
-              <div class="cov-val">
-                <span class="tick">✓</span> S$100 every 6h up to S$800
-              </div>
-            </div>
-            <div class="compare-med-header">
-              Medical and Associated Expenses
-            </div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Overseas Medical Expenses</div>
-              <div class="cov-val">
-                <span class="tick">✓</span> Up to S$2,000,000
-              </div>
-            </div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Medical Emergency</div>
-              <div class="cov-val">
-                <span class="tick">✓</span> Unlimited Evacuation
-              </div>
-            </div>
-            <div class="compare-coverage-row">
-              <div class="cov-name">Follow-Up Medical Care in Vietnam</div>
-              <div class="cov-val">
-                <span class="tick">✓</span> Up to S$50,000 illness &amp; injury
-              </div>
-            </div>
-          </div>
+              <tr class="bt-section"><td colspan="5">Section 3 – Overseas Hospital Income</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Maximum</td><td>50,000,000</td><td>30,000,000</td><td>20,000,000</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Amount Per Day</td><td>1,000,000</td><td>1,000,000</td><td>1,000,000</td><td class="val-na">N/A</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 4 – Emergency Medical Evacuation</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>3,000,000,000</td><td>2,000,000,000</td><td>1,000,000,000</td><td>600,000,000</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 5 – Repatriation</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>3,000,000,000</td><td>2,000,000,000</td><td>1,000,000,000</td><td>600,000,000</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 6 – Repatriation to Home Country</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>900,000,000</td><td>600,000,000</td><td>300,000,000</td><td>180,000,000</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 7 – Hospital Visitation</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>150,000,000</td><td>100,000,000</td><td>50,000,000</td><td class="val-na">N/A</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 8 – Compassionate Visit</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>150,000,000</td><td>100,000,000</td><td>50,000,000</td><td class="val-na">N/A</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 9 – Child Protection</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>150,000,000</td><td>100,000,000</td><td>50,000,000</td><td class="val-na">N/A</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 10 – Automatic Extension of Policy Period</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Coverage</td><td class="val-inc">Included</td><td class="val-inc">Included</td><td class="val-inc">Included</td><td class="val-inc">Included</td></tr>
+
+              <!-- PART B -->
+              <tr class="bt-part"><td colspan="5">Part B – Personal Accident Benefits</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 11 – Accidental Death and Permanent Disablement</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Under 65 Years</td><td>3,000,000,000</td><td>2,000,000,000</td><td>1,000,000,000</td><td>600,000,000</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Aged 65 Years or Older</td><td>1,500,000,000</td><td>1,000,000,000</td><td>500,000,000</td><td>300,000,000</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Children in a Family Plan</td><td>1,000,000,000</td><td>1,000,000,000</td><td>500,000,000</td><td>300,000,000</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 12 – Common Carrier Double Cover</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Under 65 Years</td><td>6,000,000,000</td><td>4,000,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Aged 65 Years or Older</td><td>3,000,000,000</td><td>2,000,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Children in a Family Plan</td><td>2,000,000,000</td><td>2,000,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 13 – Child Education Grant</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Maximum Total</td><td>120,000,000</td><td>80,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Amount Per Child</td><td>30,000,000</td><td>20,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+
+              <!-- PART C -->
+              <tr class="bt-part"><td colspan="5">Part C – Travel Inconvenience Benefits</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 14 – Travel Cancellation</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>150,000,000</td><td>100,000,000</td><td>50,000,000</td><td>10,000,000</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 15 – Travel Postponement</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>20,000,000</td><td>10,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 16 – Travel Curtailment and Travel Interruption</td></tr>
+              <tr class="bt-row"><td class="sub-indent">16a. Travel Curtailment</td><td>150,000,000</td><td>100,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-row"><td class="sub-indent">16b. Travel Interruption</td><td>150,000,000</td><td>100,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 17 – Fraudulent Credit Card Usage</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>10,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 18 – Personal Baggage including Laptop Computer</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Total</td><td>60,000,000</td><td>40,000,000</td><td>20,000,000</td><td>10,000,000</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Limit Per Article</td><td>10,000,000</td><td>10,000,000</td><td>10,000,000</td><td>4,000,000</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Limit for Laptop Computer (Per Policy)</td><td>20,000,000</td><td>20,000,000</td><td>20,000,000</td><td>4,000,000</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 19 – Baggage Delay (Per 8 continuous hours overseas)</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Individual – Amount Per Occurrence VND 4,000,000 – Maximum Payable</td><td>16,000,000</td><td>12,000,000</td><td>8,000,000</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Family – Amount Per Occurrence VND 8,000,000 – Maximum Payable</td><td>32,000,000</td><td>24,000,000</td><td>16,000,000</td><td class="val-na">N/A</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 20 – Travel Documents and Personal Money</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Total</td><td>60,000,000</td><td>40,000,000</td><td>20,000,000</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Loss of Cash</td><td>6,000,000</td><td>5,000,000</td><td>4,000,000</td><td class="val-na">N/A</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 21 – Travel Delay Including Flight Diversion (Per 6 continuous hours)</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Individual – Amount Per Occurrence VND 2,000,000 – Maximum Payable</td><td>20,000,000</td><td>15,000,000</td><td>10,000,000</td><td>6,000,000</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Family – Amount Per Occurrence VND 5,000,000 – Maximum Payable</td><td>30,000,000</td><td>20,000,000</td><td>10,000,000</td><td>6,000,000</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 22 – Flight Overbooking</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>60,000,000</td><td>40,000,000</td><td>20,000,000</td><td>12,000,000</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 23 – Kidnap and Hostage</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Amount Per 24 Continuous Hours</td><td>4,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Maximum</td><td>60,000,000</td><td>40,000,000</td><td>20,000,000</td><td class="val-na">N/A</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 24 – Hijack of Common Carrier</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Amount Per 24 Continuous Hours</td><td>4,000,000</td><td>4,000,000</td><td>4,000,000</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Maximum</td><td>60,000,000</td><td>40,000,000</td><td>20,000,000</td><td class="val-na">N/A</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 25 – Personal Liability Abroad</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>3,000,000,000</td><td>2,000,000,000</td><td>1,000,000,000</td><td class="val-na">N/A</td></tr>
+
+              <!-- PART D -->
+              <tr class="bt-part"><td colspan="5">Part D – Supplementary Benefits</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 26 – Golf Advantage</td></tr>
+              <tr class="bt-row"><td class="sub-indent">26a. Damage or Loss of Golf Equipment – Total</td><td>20,000,000</td><td>10,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-row"><td class="sub-indent">26a. Limit Per Article of Golf Equipment</td><td>10,000,000</td><td>10,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-row"><td class="sub-indent">26b. Hole-in-One</td><td>5,000,000</td><td>5,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-row"><td class="sub-indent">26c. Loss of Use of Green Fees</td><td>5,000,000</td><td>5,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 27 – Home Guard</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>150,000,000</td><td>100,000,000</td><td>50,000,000</td><td class="val-na">N/A</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 28 – Car Rental Excess Charges and Return</td></tr>
+              <tr class="bt-row"><td class="sub-indent">28a. Car Rental Excess Charges</td><td>10,000,000</td><td>5,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-row"><td class="sub-indent">28b. Return of Rental Vehicle</td><td>10,000,000</td><td>5,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 29 – Pet Care</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>5,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 30 – Disruption Benefits</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>5,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 31 – Cover in the Event of Terrorism</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Coverage</td><td class="val-inc">Included</td><td class="val-inc">Included</td><td class="val-inc">Included</td><td class="val-inc">Included</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 32 – Assistance Services</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Coverage</td><td class="val-inc">Included</td><td class="val-inc">Included</td><td class="val-inc">Included</td><td class="val-inc">Included</td></tr>
+
+              <tr class="bt-section"><td colspan="5">Section 33 – Cover in the Event of Covid-19</td></tr>
+              <tr class="bt-row"><td class="sub-indent">Coverage</td><td class="val-inc">Included</td><td class="val-inc">Included</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
