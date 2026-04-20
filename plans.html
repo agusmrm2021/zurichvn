@@ -215,11 +215,47 @@
         .val-inc::before { content: "✓ "; }
         .bt-row:nth-child(even) { background: #fafbfd; }
         .bt-row:nth-child(even):hover { background: #f4f7ff; }
+
+        /* Sticky first column */
+        .benefits-table thead th.col-benefit,
+        .benefits-table .bt-row td:first-child {
+          position: sticky;
+          left: 0;
+          z-index: 1;
+        }
+        .benefits-table thead th.col-benefit {
+          background: #1a3a6b;
+          z-index: 2;
+        }
+        .benefits-table .bt-row td:first-child {
+          background: #fff;
+          box-shadow: 2px 0 6px rgba(0,0,0,0.07);
+        }
+        .benefits-table .bt-row:nth-child(even) td:first-child {
+          background: #fafbfd;
+        }
+        .benefits-table .bt-row:hover td:first-child {
+          background: #f8faff;
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+          .benefits-section { padding: 32px 12px 48px; }
+          .benefits-table { font-size: 0.78rem; min-width: 480px; }
+          .benefits-table thead th { padding: 10px 8px; font-size: 0.82rem; }
+          .bt-part td { padding: 8px 10px; font-size: 0.75rem; }
+          .bt-section td { padding: 7px 10px; font-size: 0.76rem; }
+          .bt-subsection td { padding: 6px 10px 6px 16px; font-size: 0.74rem; }
+          .bt-row td { padding: 7px 8px; }
+          .bt-row td:first-child { padding-left: 10px; max-width: 140px; min-width: 120px; white-space: normal; word-break: break-word; }
+          .bt-row td.sub-indent { padding-left: 16px; }
+          .benefits-table thead th.col-benefit { width: 42%; min-width: 120px; }
+        }
       </style>
 
       <div class="benefits-inner">
         <h2>Plan Benefits &amp; Sum Insured</h2>
-        <p class="benefits-note">All amounts in VND (Vietnamese Đồng)</p>
+        <p class="benefits-note">All amounts in VND &nbsp;·&nbsp; B = Billion &nbsp;·&nbsp; M = Million</p>
         <div class="benefits-table-wrap">
           <table class="benefits-table">
             <thead>
@@ -434,6 +470,38 @@
     </footer>
 
     <script>
+      (function () {
+        function toShort(text) {
+          var n = parseInt(text.replace(/,/g, ''), 10);
+          if (isNaN(n)) return text;
+          if (n >= 1000000000) {
+            var t = n / 1000000000;
+            return (t === Math.floor(t) ? t : t.toFixed(1)) + 'B';
+          }
+          if (n >= 1000000) {
+            return Math.round(n / 1000000) + 'M';
+          }
+          return text;
+        }
+
+        var cells = [];
+        document.querySelectorAll('.benefits-table .bt-row td:not(:first-child)').forEach(function (td) {
+          var txt = td.textContent.trim();
+          var short = toShort(txt);
+          if (short !== txt) cells.push({ td: td, full: txt, short: short });
+        });
+
+        function apply() {
+          var isMobile = window.innerWidth <= 700;
+          cells.forEach(function (c) {
+            c.td.textContent = isMobile ? c.short : c.full;
+          });
+        }
+
+        apply();
+        window.addEventListener('resize', apply);
+      })();
+
       function toggleNav() {
         const nav = document.getElementById("main-nav");
         const header = document.querySelector("header");
