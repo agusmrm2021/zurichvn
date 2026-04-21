@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/plans.css" />
   </head>
   <body>
     <!-- UTILITY BAR -->
@@ -102,282 +103,9 @@
 
     <!-- Benefits Table -->
     <div class="benefits-section">
-      <style>
-        .benefits-section {
-          background: #f4f6fa;
-          padding: 48px 20px 64px;
-        }
-        .benefits-inner {
-          max-width: 1100px;
-          margin: 0 auto;
-        }
-        .benefits-section h2 {
-          text-align: center;
-          font-size: 1.6rem;
-          color: #1a3a6b;
-          margin-bottom: 8px;
-        }
-        .benefits-note {
-          text-align: center;
-          color: #666;
-          font-size: 0.88rem;
-          margin-bottom: 28px;
-        }
-        .benefits-table-wrap {
-          overflow-x: auto;
-          border-radius: 12px;
-          box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
-          background: #fff;
-        }
-        .benefits-table {
-          width: 100%;
-          border-collapse: collapse;
-          font-size: 0.875rem;
-          min-width: 680px;
-        }
-        .benefits-table thead tr {
-          background: #1a3a6b;
-          color: #fff;
-        }
-        .benefits-table thead th {
-          padding: 14px 16px;
-          text-align: center;
-          font-weight: 700;
-          font-size: 0.95rem;
-          letter-spacing: 0.02em;
-        }
-        .benefits-table thead th.col-benefit {
-          text-align: left;
-          width: 38%;
-          vertical-align: middle;
-        }
-        .benefits-table thead th.col-premier {
-          background: #1a3a6b;
-        }
-        .benefits-table thead th.col-superior {
-          background: #1f5c9e;
-        }
-        .benefits-table thead th.col-classic {
-          background: #3578c0;
-        }
-        .benefits-table thead th.col-lite {
-          background: #5b9dd9;
-        }
-        .bt-sum-label {
-          background: #f4f6fa;
-        }
-        .bt-sum-label td {
-          text-align: right;
-          font-size: 0.78rem;
-          font-weight: 600;
-          color: #1a3a6b;
-          letter-spacing: 0.03em;
-          padding: 6px 16px;
-          font-style: italic;
-        }
-        .bt-part {
-          background: #2167ae;
-          color: #fff;
-          font-weight: 700;
-          font-size: 0.85rem;
-          letter-spacing: 0.04em;
-          text-transform: uppercase;
-        }
-        .bt-part td {
-          padding: 10px 16px;
-        }
-        .bt-section {
-          background: #dce8f7;
-          color: #1a3a6b;
-          font-weight: 600;
-        }
-        .bt-section td {
-          padding: 9px 16px;
-          font-size: 0.85rem;
-        }
-        .bt-subsection {
-          background: #eef3fb;
-          color: #2a4a7f;
-          font-weight: 600;
-          font-style: italic;
-        }
-        .bt-subsection td {
-          padding: 8px 16px 8px 28px;
-          font-size: 0.82rem;
-        }
-        .bt-row td {
-          padding: 9px 16px;
-          border-bottom: 1px solid #eef0f5;
-          color: #333;
-          vertical-align: middle;
-        }
-        .bt-row:hover {
-          background: #f8faff;
-        }
-        .bt-row td:first-child {
-          padding-left: 28px;
-          color: #444;
-        }
-        .bt-row td.sub-indent {
-          padding-left: 44px;
-          color: #555;
-        }
-        .bt-row td:not(:first-child) {
-          text-align: right;
-          font-variant-numeric: tabular-nums;
-          white-space: nowrap;
-        }
-        .val-na {
-          color: #bbb;
-          font-style: italic;
-        }
-        .val-inc {
-          color: #1a8a3a;
-          font-weight: 600;
-        }
-        .val-inc::before {
-          content: "✓ ";
-        }
-        .bt-row:nth-child(even) {
-          background: #fafbfd;
-        }
-        .bt-row:nth-child(even):hover {
-          background: #f4f7ff;
-        }
-
-        /* Per-column tinted backgrounds for value cells */
-        .benefits-table .bt-row td:nth-child(2),
-        .benefits-table .bt-section td:nth-child(2) { background: #cce4f7; }
-        .benefits-table .bt-row td:nth-child(3),
-        .benefits-table .bt-section td:nth-child(3) { background: #b8d5f0; }
-        .benefits-table .bt-row td:nth-child(4),
-        .benefits-table .bt-section td:nth-child(4) { background: #a4c4e8; }
-        .benefits-table .bt-row td:nth-child(5),
-        .benefits-table .bt-section td:nth-child(5) { background: #90b3df; }
-
-        /* Value cells on section header rows */
-        .benefits-table .bt-section td:not(:first-child) {
-          text-align: right;
-          font-variant-numeric: tabular-nums;
-          white-space: nowrap;
-          font-weight: 600;
-          padding: 9px 16px;
-        }
-
-        /* Sticky first column */
-        .benefits-table thead th.col-benefit,
-        .benefits-table .bt-row td:first-child {
-          position: sticky;
-          left: 0;
-          z-index: 1;
-        }
-        .benefits-table thead th.col-benefit {
-          background: #1a3a6b;
-          z-index: 2;
-        }
-        .benefits-table .bt-row td:first-child {
-          background: #fff;
-          box-shadow: 2px 0 6px rgba(0, 0, 0, 0.07);
-        }
-        .benefits-table .bt-row:nth-child(even) td:first-child {
-          background: #fafbfd;
-        }
-        .benefits-table .bt-row:hover td:first-child {
-          background: #f8faff;
-        }
-
-        /* Mobile */
-        /* ── Plan tabs (mobile only) ── */
-        .plan-tabs { display: none; }
-
-        @media (max-width: 700px) {
-          .benefits-section { padding: 32px 20px 48px; }
-
-          /* Plan tab bar */
-          .plan-tabs {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 6px;
-            margin-bottom: 16px;
-          }
-          .plan-tab {
-            border: 2px solid #d0d8e8;
-            border-radius: 10px;
-            padding: 8px 4px;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 3px;
-            background: #f0f4fb;
-            color: #666;
-            font-family: inherit;
-            transition: all 0.15s;
-          }
-          .plan-tab .tab-tier {
-            font-size: 0.58rem;
-            line-height: 1.2;
-            text-align: center;
-          }
-          .plan-tab .tab-name {
-            font-size: 0.82rem;
-            font-weight: 700;
-            line-height: 1;
-          }
-          .plan-tab[data-plan="lite"].active    { background: #5b9dd9; border-color: #5b9dd9; color: #fff; }
-          .plan-tab[data-plan="classic"].active  { background: #3578c0; border-color: #3578c0; color: #fff; }
-          .plan-tab[data-plan="superior"].active { background: #1f5c9e; border-color: #1f5c9e; color: #fff; }
-          .plan-tab[data-plan="premier"].active  { background: #1a3a6b; border-color: #1a3a6b; color: #fff; }
-
-          /* Table resets for 2-column layout */
-          .benefits-table {
-            font-size: 0.84rem;
-            min-width: 0;
-            width: 100%;
-          }
-          .benefits-table thead { display: none; }
-          .benefits-table .bt-row td:first-child {
-            position: static;
-            box-shadow: none;
-          }
-
-          /* Column visibility per active plan */
-          .benefits-table.show-lite td:nth-child(3),
-          .benefits-table.show-lite td:nth-child(4),
-          .benefits-table.show-lite td:nth-child(5) { display: none; }
-
-          .benefits-table.show-classic td:nth-child(2),
-          .benefits-table.show-classic td:nth-child(4),
-          .benefits-table.show-classic td:nth-child(5) { display: none; }
-
-          .benefits-table.show-superior td:nth-child(2),
-          .benefits-table.show-superior td:nth-child(3),
-          .benefits-table.show-superior td:nth-child(5) { display: none; }
-
-          .benefits-table.show-premier td:nth-child(2),
-          .benefits-table.show-premier td:nth-child(3),
-          .benefits-table.show-premier td:nth-child(4) { display: none; }
-
-          /* Cell sizing */
-          .benefits-table td:first-child {
-            width: 62%;
-            white-space: normal;
-            word-break: break-word;
-            padding: 10px 14px;
-          }
-          .bt-row td { padding: 10px 14px; }
-          .bt-row td.sub-indent { padding-left: 22px; }
-          .bt-section td { padding: 9px 14px; font-size: 0.8rem; }
-          .bt-subsection td { padding: 7px 14px 7px 22px; font-size: 0.78rem; }
-          .bt-part td { padding: 9px 14px; font-size: 0.78rem; }
-        }
-      </style>
-
       <div class="benefits-inner">
         <h2>Plan Benefits &amp; Sum Insured</h2>
-        <p class="benefits-note">
-          All amounts in VND &nbsp;·&nbsp; B = Billion &nbsp;·&nbsp; M = Million
-        </p>
+
         <div class="plan-tabs">
           <button class="plan-tab active" data-plan="lite">
             <span class="tab-tier">Basic</span>
@@ -1095,18 +823,22 @@
     </footer>
 
     <script>
-
       // Plan tab switching (mobile)
-      document.querySelectorAll('.plan-tab').forEach(function (tab) {
-        tab.addEventListener('click', function () {
+      document.querySelectorAll(".plan-tab").forEach(function (tab) {
+        tab.addEventListener("click", function () {
           var plan = this.dataset.plan;
-          document.querySelectorAll('.plan-tab').forEach(function (t) {
-            t.classList.remove('active');
+          document.querySelectorAll(".plan-tab").forEach(function (t) {
+            t.classList.remove("active");
           });
-          this.classList.add('active');
-          var table = document.querySelector('.benefits-table');
-          table.classList.remove('show-lite', 'show-classic', 'show-superior', 'show-premier');
-          table.classList.add('show-' + plan);
+          this.classList.add("active");
+          var table = document.querySelector(".benefits-table");
+          table.classList.remove(
+            "show-lite",
+            "show-classic",
+            "show-superior",
+            "show-premier",
+          );
+          table.classList.add("show-" + plan);
         });
       });
 
