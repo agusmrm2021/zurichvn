@@ -126,7 +126,7 @@
         .benefits-table-wrap {
           overflow-x: auto;
           border-radius: 12px;
-          box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+          box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
           background: #fff;
         }
         .benefits-table {
@@ -149,11 +149,32 @@
         .benefits-table thead th.col-benefit {
           text-align: left;
           width: 38%;
+          vertical-align: middle;
         }
-        .benefits-table thead th.col-premier { background: #1a3a6b; }
-        .benefits-table thead th.col-superior { background: #1d4a85; }
-        .benefits-table thead th.col-classic { background: #20529a; }
-        .benefits-table thead th.col-lite { background: #235bb0; }
+        .benefits-table thead th.col-premier {
+          background: #1a3a6b;
+        }
+        .benefits-table thead th.col-superior {
+          background: #1f5c9e;
+        }
+        .benefits-table thead th.col-classic {
+          background: #3578c0;
+        }
+        .benefits-table thead th.col-lite {
+          background: #5b9dd9;
+        }
+        .bt-sum-label {
+          background: #f4f6fa;
+        }
+        .bt-sum-label td {
+          text-align: right;
+          font-size: 0.78rem;
+          font-weight: 600;
+          color: #1a3a6b;
+          letter-spacing: 0.03em;
+          padding: 6px 16px;
+          font-style: italic;
+        }
         .bt-part {
           background: #2167ae;
           color: #fff;
@@ -190,7 +211,9 @@
           color: #333;
           vertical-align: middle;
         }
-        .bt-row:hover { background: #f8faff; }
+        .bt-row:hover {
+          background: #f8faff;
+        }
         .bt-row td:first-child {
           padding-left: 28px;
           color: #444;
@@ -212,9 +235,34 @@
           color: #1a8a3a;
           font-weight: 600;
         }
-        .val-inc::before { content: "✓ "; }
-        .bt-row:nth-child(even) { background: #fafbfd; }
-        .bt-row:nth-child(even):hover { background: #f4f7ff; }
+        .val-inc::before {
+          content: "✓ ";
+        }
+        .bt-row:nth-child(even) {
+          background: #fafbfd;
+        }
+        .bt-row:nth-child(even):hover {
+          background: #f4f7ff;
+        }
+
+        /* Per-column tinted backgrounds for value cells */
+        .benefits-table .bt-row td:nth-child(2),
+        .benefits-table .bt-section td:nth-child(2) { background: #cce4f7; }
+        .benefits-table .bt-row td:nth-child(3),
+        .benefits-table .bt-section td:nth-child(3) { background: #b8d5f0; }
+        .benefits-table .bt-row td:nth-child(4),
+        .benefits-table .bt-section td:nth-child(4) { background: #a4c4e8; }
+        .benefits-table .bt-row td:nth-child(5),
+        .benefits-table .bt-section td:nth-child(5) { background: #90b3df; }
+
+        /* Value cells on section header rows */
+        .benefits-table .bt-section td:not(:first-child) {
+          text-align: right;
+          font-variant-numeric: tabular-nums;
+          white-space: nowrap;
+          font-weight: 600;
+          padding: 9px 16px;
+        }
 
         /* Sticky first column */
         .benefits-table thead th.col-benefit,
@@ -229,7 +277,7 @@
         }
         .benefits-table .bt-row td:first-child {
           background: #fff;
-          box-shadow: 2px 0 6px rgba(0,0,0,0.07);
+          box-shadow: 2px 0 6px rgba(0, 0, 0, 0.07);
         }
         .benefits-table .bt-row:nth-child(even) td:first-child {
           background: #fafbfd;
@@ -239,174 +287,757 @@
         }
 
         /* Mobile */
+        /* ── Plan tabs (mobile only) ── */
+        .plan-tabs { display: none; }
+
         @media (max-width: 700px) {
-          .benefits-section { padding: 32px 12px 48px; }
-          .benefits-table { font-size: 0.78rem; min-width: 480px; }
-          .benefits-table thead th { padding: 10px 8px; font-size: 0.82rem; }
-          .bt-part td { padding: 8px 10px; font-size: 0.75rem; }
-          .bt-section td { padding: 7px 10px; font-size: 0.76rem; }
-          .bt-subsection td { padding: 6px 10px 6px 16px; font-size: 0.74rem; }
-          .bt-row td { padding: 7px 8px; }
-          .bt-row td:first-child { padding-left: 10px; max-width: 140px; min-width: 120px; white-space: normal; word-break: break-word; }
-          .bt-row td.sub-indent { padding-left: 16px; }
-          .benefits-table thead th.col-benefit { width: 42%; min-width: 120px; }
+          .benefits-section { padding: 32px 20px 48px; }
+
+          /* Plan tab bar */
+          .plan-tabs {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+            margin-bottom: 16px;
+          }
+          .plan-tab {
+            border: 2px solid #d0d8e8;
+            border-radius: 10px;
+            padding: 8px 4px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            background: #f0f4fb;
+            color: #666;
+            font-family: inherit;
+            transition: all 0.15s;
+          }
+          .plan-tab .tab-tier {
+            font-size: 0.58rem;
+            line-height: 1.2;
+            text-align: center;
+          }
+          .plan-tab .tab-name {
+            font-size: 0.82rem;
+            font-weight: 700;
+            line-height: 1;
+          }
+          .plan-tab[data-plan="lite"].active    { background: #5b9dd9; border-color: #5b9dd9; color: #fff; }
+          .plan-tab[data-plan="classic"].active  { background: #3578c0; border-color: #3578c0; color: #fff; }
+          .plan-tab[data-plan="superior"].active { background: #1f5c9e; border-color: #1f5c9e; color: #fff; }
+          .plan-tab[data-plan="premier"].active  { background: #1a3a6b; border-color: #1a3a6b; color: #fff; }
+
+          /* Table resets for 2-column layout */
+          .benefits-table {
+            font-size: 0.84rem;
+            min-width: 0;
+            width: 100%;
+          }
+          .benefits-table thead { display: none; }
+          .benefits-table .bt-row td:first-child {
+            position: static;
+            box-shadow: none;
+          }
+
+          /* Column visibility per active plan */
+          .benefits-table.show-lite td:nth-child(3),
+          .benefits-table.show-lite td:nth-child(4),
+          .benefits-table.show-lite td:nth-child(5) { display: none; }
+
+          .benefits-table.show-classic td:nth-child(2),
+          .benefits-table.show-classic td:nth-child(4),
+          .benefits-table.show-classic td:nth-child(5) { display: none; }
+
+          .benefits-table.show-superior td:nth-child(2),
+          .benefits-table.show-superior td:nth-child(3),
+          .benefits-table.show-superior td:nth-child(5) { display: none; }
+
+          .benefits-table.show-premier td:nth-child(2),
+          .benefits-table.show-premier td:nth-child(3),
+          .benefits-table.show-premier td:nth-child(4) { display: none; }
+
+          /* Cell sizing */
+          .benefits-table td:first-child {
+            width: 62%;
+            white-space: normal;
+            word-break: break-word;
+            padding: 10px 14px;
+          }
+          .bt-row td { padding: 10px 14px; }
+          .bt-row td.sub-indent { padding-left: 22px; }
+          .bt-section td { padding: 9px 14px; font-size: 0.8rem; }
+          .bt-subsection td { padding: 7px 14px 7px 22px; font-size: 0.78rem; }
+          .bt-part td { padding: 9px 14px; font-size: 0.78rem; }
         }
       </style>
 
       <div class="benefits-inner">
         <h2>Plan Benefits &amp; Sum Insured</h2>
-        <p class="benefits-note">All amounts in VND &nbsp;·&nbsp; B = Billion &nbsp;·&nbsp; M = Million</p>
+        <p class="benefits-note">
+          All amounts in VND &nbsp;·&nbsp; B = Billion &nbsp;·&nbsp; M = Million
+        </p>
+        <div class="plan-tabs">
+          <button class="plan-tab active" data-plan="lite">
+            <span class="tab-tier">Basic</span>
+            <span class="tab-name">Lite</span>
+          </button>
+          <button class="plan-tab" data-plan="classic">
+            <span class="tab-tier">Most Popular</span>
+            <span class="tab-name">Classic</span>
+          </button>
+          <button class="plan-tab" data-plan="superior">
+            <span class="tab-tier">Highly Recommended</span>
+            <span class="tab-name">Superior</span>
+          </button>
+          <button class="plan-tab" data-plan="premier">
+            <span class="tab-tier">Premium Protection</span>
+            <span class="tab-name">Premier</span>
+          </button>
+        </div>
         <div class="benefits-table-wrap">
-          <table class="benefits-table">
+          <table class="benefits-table show-lite">
             <thead>
               <tr>
-                <th class="col-benefit">Benefit</th>
-                <th class="col-premier">Premier</th>
-                <th class="col-superior">Superior</th>
-                <th class="col-classic">Classic</th>
+                <th class="col-benefit" rowspan="2">Schedule of Benefit</th>
+                <th
+                  class="col-lite"
+                  style="
+                    font-size: 0.72rem;
+                    font-weight: 400;
+                    padding: 10px 16px 4px;
+                    letter-spacing: 0.03em;
+                    opacity: 0.85;
+                  "
+                >
+                  Basic
+                </th>
+                <th
+                  class="col-classic"
+                  style="
+                    font-size: 0.72rem;
+                    font-weight: 400;
+                    padding: 10px 16px 4px;
+                    letter-spacing: 0.03em;
+                    opacity: 0.85;
+                  "
+                >
+                  Most Popular
+                </th>
+                <th
+                  class="col-superior"
+                  style="
+                    font-size: 0.72rem;
+                    font-weight: 400;
+                    padding: 10px 16px 4px;
+                    letter-spacing: 0.03em;
+                    opacity: 0.85;
+                  "
+                >
+                  Highly Recommended
+                </th>
+                <th
+                  class="col-premier"
+                  style="
+                    font-size: 0.72rem;
+                    font-weight: 400;
+                    padding: 10px 16px 4px;
+                    letter-spacing: 0.03em;
+                    opacity: 0.85;
+                  "
+                >
+                  Premium Protection
+                </th>
+              </tr>
+              <tr>
                 <th class="col-lite">Lite</th>
+                <th class="col-classic">Classic</th>
+                <th class="col-superior">Superior</th>
+                <th class="col-premier">Premier</th>
               </tr>
             </thead>
             <tbody>
+              <!-- Sum Insured label -->
+              <tr class="bt-sum-label">
+                <td colspan="5">Sum Insured (VND)</td>
+              </tr>
 
               <!-- PART A -->
-              <tr class="bt-part"><td colspan="5">Part A – Medical and Associated Benefits</td></tr>
+              <tr class="bt-part">
+                <td colspan="5">Part A – Medical and Associated Benefits</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 1 – Medical Expenses Incurred Overseas</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Under 65 Years</td><td>3,000,000,000</td><td>2,000,000,000</td><td>1,000,000,000</td><td>600,000,000</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Aged 65 Years or Older</td><td>1,000,000,000</td><td>1,000,000,000</td><td>500,000,000</td><td>300,000,000</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Children in a Family Plan</td><td>3,000,000,000</td><td>2,000,000,000</td><td>1,000,000,000</td><td>600,000,000</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">
+                  Section 1 – Medical Expenses Incurred Overseas
+                </td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Under 65 Years</td>
+                <td>600,000,000</td>
+                <td>1,000,000,000</td>
+                <td>2,000,000,000</td>
+                <td>3,000,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Aged 65 Years or Older</td>
+                <td>300,000,000</td>
+                <td>500,000,000</td>
+                <td>1,000,000,000</td>
+                <td>1,000,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Children in a Family Plan</td>
+                <td>600,000,000</td>
+                <td>1,000,000,000</td>
+                <td>2,000,000,000</td>
+                <td>3,000,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 2 – Post Trip Medical Expenses Incurred in Vietnam</td></tr>
-              <tr class="bt-subsection"><td colspan="5">2a. For Injury Sustained Overseas and for Sickness Sustained Overseas Where We Evacuated You</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Under 65 Years</td><td>300,000,000</td><td>200,000,000</td><td>100,000,000</td><td class="val-na">N/A</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Aged 65 Years or Older</td><td>30,000,000</td><td>30,000,000</td><td>15,000,000</td><td class="val-na">N/A</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Children in a Family Plan</td><td>300,000,000</td><td>200,000,000</td><td>100,000,000</td><td class="val-na">N/A</td></tr>
-              <tr class="bt-subsection"><td colspan="5">2b. For Sickness Sustained Overseas Without Evacuation</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Under 65 Years</td><td>90,000,000</td><td>60,000,000</td><td>30,000,000</td><td class="val-na">N/A</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Aged 65 Years or Older</td><td>10,000,000</td><td>10,000,000</td><td>5,000,000</td><td class="val-na">N/A</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Children in a Family Plan</td><td>90,000,000</td><td>60,000,000</td><td>30,000,000</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">
+                  Section 2 – Post Trip Medical Expenses Incurred in Vietnam
+                </td>
+              </tr>
+              <tr class="bt-subsection">
+                <td colspan="5">
+                  2a. For Injury Sustained Overseas and for Sickness Sustained
+                  Overseas Where We Evacuated You
+                </td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Under 65 Years</td>
+                <td class="val-na">N/A</td>
+                <td>100,000,000</td>
+                <td>200,000,000</td>
+                <td>300,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Aged 65 Years or Older</td>
+                <td class="val-na">N/A</td>
+                <td>15,000,000</td>
+                <td>30,000,000</td>
+                <td>30,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Children in a Family Plan</td>
+                <td class="val-na">N/A</td>
+                <td>100,000,000</td>
+                <td>200,000,000</td>
+                <td>300,000,000</td>
+              </tr>
+              <tr class="bt-subsection">
+                <td colspan="5">
+                  2b. For Sickness Sustained Overseas Without Evacuation
+                </td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Under 65 Years</td>
+                <td class="val-na">N/A</td>
+                <td>30,000,000</td>
+                <td>60,000,000</td>
+                <td>90,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Aged 65 Years or Older</td>
+                <td class="val-na">N/A</td>
+                <td>5,000,000</td>
+                <td>10,000,000</td>
+                <td>10,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Children in a Family Plan</td>
+                <td class="val-na">N/A</td>
+                <td>30,000,000</td>
+                <td>60,000,000</td>
+                <td>90,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 3 – Overseas Hospital Income</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Maximum</td><td>50,000,000</td><td>30,000,000</td><td>20,000,000</td><td class="val-na">N/A</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Amount Per Day</td><td>1,000,000</td><td>1,000,000</td><td>1,000,000</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-section">
+                <td>Section 3 – Overseas Hospital Income</td>
+                <td class="val-na">N/A</td>
+                <td>20,000,000</td>
+                <td>30,000,000</td>
+                <td>50,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Amount Per Day</td>
+                <td class="val-na">N/A</td>
+                <td>1,000,000</td>
+                <td>1,000,000</td>
+                <td>1,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 4 – Emergency Medical Evacuation</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>3,000,000,000</td><td>2,000,000,000</td><td>1,000,000,000</td><td>600,000,000</td></tr>
+              <tr class="bt-section">
+                <td>Section 4 – Emergency Medical Evacuation</td>
+                <td>600,000,000</td>
+                <td>1,000,000,000</td>
+                <td>2,000,000,000</td>
+                <td>3,000,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 5 – Repatriation</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>3,000,000,000</td><td>2,000,000,000</td><td>1,000,000,000</td><td>600,000,000</td></tr>
+              <tr class="bt-section">
+                <td>Section 5 – Repatriation</td>
+                <td>600,000,000</td>
+                <td>1,000,000,000</td>
+                <td>2,000,000,000</td>
+                <td>3,000,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 6 – Repatriation to Home Country</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>900,000,000</td><td>600,000,000</td><td>300,000,000</td><td>180,000,000</td></tr>
+              <tr class="bt-section">
+                <td>Section 6 – Direct Repatriation</td>
+                <td>180,000,000</td>
+                <td>300,000,000</td>
+                <td>600,000,000</td>
+                <td>900,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 7 – Hospital Visitation</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>150,000,000</td><td>100,000,000</td><td>50,000,000</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-section">
+                <td>Section 7 – Hospital Visitation</td>
+                <td class="val-na">N/A</td>
+                <td>50,000,000</td>
+                <td>100,000,000</td>
+                <td>150,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 8 – Compassionate Visit</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>150,000,000</td><td>100,000,000</td><td>50,000,000</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-section">
+                <td>Section 8 – Compassionate Visit</td>
+                <td class="val-na">N/A</td>
+                <td>50,000,000</td>
+                <td>100,000,000</td>
+                <td>150,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 9 – Child Protection</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>150,000,000</td><td>100,000,000</td><td>50,000,000</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-section">
+                <td>Section 9 – Child Protector</td>
+                <td class="val-na">N/A</td>
+                <td>50,000,000</td>
+                <td>100,000,000</td>
+                <td>150,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 10 – Automatic Extension of Policy Period</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Coverage</td><td class="val-inc">Included</td><td class="val-inc">Included</td><td class="val-inc">Included</td><td class="val-inc">Included</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">
+                  Section 10 – Automatic Extension of Policy Period
+                </td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Coverage</td>
+                <td class="val-inc">Included</td>
+                <td class="val-inc">Included</td>
+                <td class="val-inc">Included</td>
+                <td class="val-inc">Included</td>
+              </tr>
 
               <!-- PART B -->
-              <tr class="bt-part"><td colspan="5">Part B – Personal Accident Benefits</td></tr>
+              <tr class="bt-part">
+                <td colspan="5">Part B – Personal Accident Benefits</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 11 – Accidental Death and Permanent Disablement</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Under 65 Years</td><td>3,000,000,000</td><td>2,000,000,000</td><td>1,000,000,000</td><td>600,000,000</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Aged 65 Years or Older</td><td>1,500,000,000</td><td>1,000,000,000</td><td>500,000,000</td><td>300,000,000</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Children in a Family Plan</td><td>1,000,000,000</td><td>1,000,000,000</td><td>500,000,000</td><td>300,000,000</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">
+                  Section 11 – Accidental Death and Permanent Disablement
+                </td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Under 65 Years</td>
+                <td>600,000,000</td>
+                <td>1,000,000,000</td>
+                <td>2,000,000,000</td>
+                <td>3,000,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Aged 65 Years or Older</td>
+                <td>300,000,000</td>
+                <td>500,000,000</td>
+                <td>1,000,000,000</td>
+                <td>1,500,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Children in a Family Plan</td>
+                <td>300,000,000</td>
+                <td>500,000,000</td>
+                <td>1,000,000,000</td>
+                <td>1,000,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 12 – Common Carrier Double Cover</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Under 65 Years</td><td>6,000,000,000</td><td>4,000,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Aged 65 Years or Older</td><td>3,000,000,000</td><td>2,000,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Children in a Family Plan</td><td>2,000,000,000</td><td>2,000,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">Section 12 – Common Carrier Double Cover</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Under 65 Years</td>
+                <td class="val-na">N/A</td>
+                <td class="val-na">N/A</td>
+                <td>4,000,000,000</td>
+                <td>6,000,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Aged 65 Years or Older</td>
+                <td class="val-na">N/A</td>
+                <td class="val-na">N/A</td>
+                <td>2,000,000,000</td>
+                <td>3,000,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Children in a Family Plan</td>
+                <td class="val-na">N/A</td>
+                <td class="val-na">N/A</td>
+                <td>2,000,000,000</td>
+                <td>2,000,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 13 – Child Education Grant</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Maximum Total</td><td>120,000,000</td><td>80,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Amount Per Child</td><td>30,000,000</td><td>20,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">Section 13 – Child Education Grant</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Maximum Total</td>
+                <td class="val-na">N/A</td>
+                <td class="val-na">N/A</td>
+                <td>80,000,000</td>
+                <td>120,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Amount Per Child</td>
+                <td class="val-na">N/A</td>
+                <td class="val-na">N/A</td>
+                <td>20,000,000</td>
+                <td>30,000,000</td>
+              </tr>
 
               <!-- PART C -->
-              <tr class="bt-part"><td colspan="5">Part C – Travel Inconvenience Benefits</td></tr>
+              <tr class="bt-part">
+                <td colspan="5">Part C – Travel Inconvenience Benefits</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 14 – Travel Cancellation</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>150,000,000</td><td>100,000,000</td><td>50,000,000</td><td>10,000,000</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">Section 14 – Travel Cancellation</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Sum Insured</td>
+                <td>10,000,000</td>
+                <td>50,000,000</td>
+                <td>100,000,000</td>
+                <td>150,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 15 – Travel Postponement</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>20,000,000</td><td>10,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">Section 15 – Travel Postponement</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Sum Insured</td>
+                <td class="val-na">N/A</td>
+                <td class="val-na">N/A</td>
+                <td>10,000,000</td>
+                <td>20,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 16 – Travel Curtailment and Travel Interruption</td></tr>
-              <tr class="bt-row"><td class="sub-indent">16a. Travel Curtailment</td><td>150,000,000</td><td>100,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
-              <tr class="bt-row"><td class="sub-indent">16b. Travel Interruption</td><td>150,000,000</td><td>100,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">
+                  Section 16 – Travel Curtailment and Travel Interruption
+                </td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">16a. Travel Curtailment</td>
+                <td class="val-na">N/A</td>
+                <td class="val-na">N/A</td>
+                <td>100,000,000</td>
+                <td>150,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">16b. Travel Interruption</td>
+                <td class="val-na">N/A</td>
+                <td class="val-na">N/A</td>
+                <td>100,000,000</td>
+                <td>150,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 17 – Fraudulent Credit Card Usage</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>10,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">Section 17 – Fraudulent Credit Card Usage</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Sum Insured</td>
+                <td class="val-na">N/A</td>
+                <td class="val-na">N/A</td>
+                <td class="val-na">N/A</td>
+                <td>10,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 18 – Personal Baggage including Laptop Computer</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Total</td><td>60,000,000</td><td>40,000,000</td><td>20,000,000</td><td>10,000,000</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Limit Per Article</td><td>10,000,000</td><td>10,000,000</td><td>10,000,000</td><td>4,000,000</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Limit for Laptop Computer (Per Policy)</td><td>20,000,000</td><td>20,000,000</td><td>20,000,000</td><td>4,000,000</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">
+                  Section 18 – Personal Baggage including Laptop Computer
+                </td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Total</td>
+                <td>10,000,000</td>
+                <td>20,000,000</td>
+                <td>40,000,000</td>
+                <td>60,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Limit Per Article</td>
+                <td>4,000,000</td>
+                <td>10,000,000</td>
+                <td>10,000,000</td>
+                <td>10,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">
+                  Limit for Laptop Computer (Per Policy)
+                </td>
+                <td>4,000,000</td>
+                <td>20,000,000</td>
+                <td>20,000,000</td>
+                <td>20,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 19 – Baggage Delay (Per 8 continuous hours overseas)</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Individual – Amount Per Occurrence VND 4,000,000 – Maximum Payable</td><td>16,000,000</td><td>12,000,000</td><td>8,000,000</td><td class="val-na">N/A</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Family – Amount Per Occurrence VND 8,000,000 – Maximum Payable</td><td>32,000,000</td><td>24,000,000</td><td>16,000,000</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">
+                  Section 19 – Baggage Delay (Per 8 continuous hours overseas)
+                </td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">
+                  Individual – Amount Per Occurrence VND 4,000,000 – Maximum
+                  Payable
+                </td>
+                <td class="val-na">N/A</td>
+                <td>8,000,000</td>
+                <td>12,000,000</td>
+                <td>16,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">
+                  Family – Amount Per Occurrence VND 8,000,000 – Maximum Payable
+                </td>
+                <td class="val-na">N/A</td>
+                <td>16,000,000</td>
+                <td>24,000,000</td>
+                <td>32,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 20 – Travel Documents and Personal Money</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Total</td><td>60,000,000</td><td>40,000,000</td><td>20,000,000</td><td class="val-na">N/A</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Loss of Cash</td><td>6,000,000</td><td>5,000,000</td><td>4,000,000</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">
+                  Section 20 – Travel Documents and Personal Money
+                </td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Total</td>
+                <td class="val-na">N/A</td>
+                <td>20,000,000</td>
+                <td>40,000,000</td>
+                <td>60,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Loss of Cash</td>
+                <td class="val-na">N/A</td>
+                <td>4,000,000</td>
+                <td>5,000,000</td>
+                <td>6,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 21 – Travel Delay Including Flight Diversion (Per 6 continuous hours)</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Individual – Amount Per Occurrence VND 2,000,000 – Maximum Payable</td><td>20,000,000</td><td>15,000,000</td><td>10,000,000</td><td>6,000,000</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Family – Amount Per Occurrence VND 5,000,000 – Maximum Payable</td><td>30,000,000</td><td>20,000,000</td><td>10,000,000</td><td>6,000,000</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">
+                  Section 21 – Travel Delay Including Flight Diversion (Per 6
+                  continuous hours)
+                </td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">
+                  Individual – Amount Per Occurrence VND 2,000,000 – Maximum
+                  Payable
+                </td>
+                <td>6,000,000</td>
+                <td>10,000,000</td>
+                <td>15,000,000</td>
+                <td>20,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">
+                  Family – Amount Per Occurrence VND 5,000,000 – Maximum Payable
+                </td>
+                <td>12,000,000</td>
+                <td>20,000,000</td>
+                <td>30,000,000</td>
+                <td>40,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 22 – Flight Overbooking</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>60,000,000</td><td>40,000,000</td><td>20,000,000</td><td>12,000,000</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">Section 22 – Flight Overbooking</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Sum Insured</td>
+                <td class="val-na">N/A</td>
+                <td class="val-na">N/A</td>
+                <td class="val-na">N/A</td>
+                <td>4,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 23 – Kidnap and Hostage</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Amount Per 24 Continuous Hours</td><td>4,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Maximum</td><td>60,000,000</td><td>40,000,000</td><td>20,000,000</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">Section 23 – Kidnap and Hostage</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Maximum</td>
+                <td class="val-na">N/A</td>
+                <td>20,000,000</td>
+                <td>40,000,000</td>
+                <td>60,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Amount Per Occurrence</td>
+                <td class="val-na">N/A</td>
+                <td>4,000,000</td>
+                <td>4,000,000</td>
+                <td>4,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 24 – Hijack of Common Carrier</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Amount Per 24 Continuous Hours</td><td>4,000,000</td><td>4,000,000</td><td>4,000,000</td><td class="val-na">N/A</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Maximum</td><td>60,000,000</td><td>40,000,000</td><td>20,000,000</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">Section 24 – Hijack of Common Carrier</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Maximum</td>
+                <td class="val-na">N/A</td>
+                <td>20,000,000</td>
+                <td>40,000,000</td>
+                <td>60,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Amount Per Occurrence</td>
+                <td class="val-na">N/A</td>
+                <td>4,000,000</td>
+                <td>4,000,000</td>
+                <td>4,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 25 – Personal Liability Abroad</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>3,000,000,000</td><td>2,000,000,000</td><td>1,000,000,000</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">Section 25 – Personal Liability Abroad</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Sum Insured</td>
+                <td class="val-na">N/A</td>
+                <td>1,000,000,000</td>
+                <td>2,000,000,000</td>
+                <td>3,000,000,000</td>
+              </tr>
 
               <!-- PART D -->
-              <tr class="bt-part"><td colspan="5">Part D – Supplementary Benefits</td></tr>
+              <tr class="bt-part">
+                <td colspan="5">Part D – Supplementary Benefits</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 26 – Golf Advantage</td></tr>
-              <tr class="bt-row"><td class="sub-indent">26a. Damage or Loss of Golf Equipment – Total</td><td>20,000,000</td><td>10,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
-              <tr class="bt-row"><td class="sub-indent">26a. Limit Per Article of Golf Equipment</td><td>10,000,000</td><td>10,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
-              <tr class="bt-row"><td class="sub-indent">26b. Hole-in-One</td><td>5,000,000</td><td>5,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
-              <tr class="bt-row"><td class="sub-indent">26c. Loss of Use of Green Fees</td><td>5,000,000</td><td>5,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">Section 26 – Golf Advantage</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">
+                  26a. Damage or Loss of Golf Equipment – Total
+                </td>
+                <td class="val-na">N/A</td>
+                <td class="val-na">N/A</td>
+                <td>10,000,000</td>
+                <td>20,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">
+                  26a. Limit Per Article of Golf Equipment
+                </td>
+                <td class="val-na">N/A</td>
+                <td class="val-na">N/A</td>
+                <td>10,000,000</td>
+                <td>10,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">26b. Hole-in-One</td>
+                <td class="val-na">N/A</td>
+                <td class="val-na">N/A</td>
+                <td>5,000,000</td>
+                <td>5,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">26c. Loss of Use of Green Fees</td>
+                <td class="val-na">N/A</td>
+                <td class="val-na">N/A</td>
+                <td>5,000,000</td>
+                <td>5,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 27 – Home Guard</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>150,000,000</td><td>100,000,000</td><td>50,000,000</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">Section 27 – Home Guard</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Sum Insured</td>
+                <td class="val-na">N/A</td>
+                <td>50,000,000</td>
+                <td>100,000,000</td>
+                <td>150,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 28 – Car Rental Excess Charges and Return</td></tr>
-              <tr class="bt-row"><td class="sub-indent">28a. Car Rental Excess Charges</td><td>10,000,000</td><td>5,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
-              <tr class="bt-row"><td class="sub-indent">28b. Return of Rental Vehicle</td><td>10,000,000</td><td>5,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">
+                  Section 28 – Car Rental Excess Charges and Return
+                </td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">28a. Car Rental Excess Charges</td>
+                <td class="val-na">N/A</td>
+                <td class="val-na">N/A</td>
+                <td>5,000,000</td>
+                <td>10,000,000</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">28b. Return of Rental Vehicle</td>
+                <td class="val-na">N/A</td>
+                <td class="val-na">N/A</td>
+                <td>5,000,000</td>
+                <td>10,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 29 – Pet Care</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>5,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">Section 29 – Pet Care</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Sum Insured</td>
+                <td class="val-na">N/A</td>
+                <td class="val-na">N/A</td>
+                <td class="val-na">N/A</td>
+                <td>5,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 30 – Disruption Benefits</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Sum Insured</td><td>5,000,000</td><td class="val-na">N/A</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">Section 30 – Disruption Benefits</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Sum Insured</td>
+                <td class="val-na">N/A</td>
+                <td class="val-na">N/A</td>
+                <td class="val-na">N/A</td>
+                <td>5,000,000</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 31 – Cover in the Event of Terrorism</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Coverage</td><td class="val-inc">Included</td><td class="val-inc">Included</td><td class="val-inc">Included</td><td class="val-inc">Included</td></tr>
+              <tr class="bt-section">
+                <td colspan="5">
+                  Section 31 – Cover in the Event of Terrorism
+                </td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Coverage</td>
+                <td class="val-inc">Included</td>
+                <td class="val-inc">Included</td>
+                <td class="val-inc">Included</td>
+                <td class="val-inc">Included</td>
+              </tr>
 
-              <tr class="bt-section"><td colspan="5">Section 32 – Assistance Services</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Coverage</td><td class="val-inc">Included</td><td class="val-inc">Included</td><td class="val-inc">Included</td><td class="val-inc">Included</td></tr>
-
-              <tr class="bt-section"><td colspan="5">Section 33 – Cover in the Event of Covid-19</td></tr>
-              <tr class="bt-row"><td class="sub-indent">Coverage</td><td class="val-inc">Included</td><td class="val-inc">Included</td><td class="val-na">N/A</td><td class="val-na">N/A</td></tr>
-
+              <tr class="bt-section">
+                <td colspan="5">Section 32 – Assistance Services</td>
+              </tr>
+              <tr class="bt-row">
+                <td class="sub-indent">Coverage</td>
+                <td class="val-inc">Included</td>
+                <td class="val-inc">Included</td>
+                <td class="val-inc">Included</td>
+                <td class="val-inc">Included</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -421,13 +1052,7 @@
             src="https://www.travelguard.com.sg/content/dam/common-logos/zurich/CM_Travel_Guard_v_RGB.svg"
             alt="Travel Guard"
           />
-          <p>
-            The policy is underwritten by Zurich Insurance Company Ltd (Vietnam
-            Branch). Company Registration Number T08FC7171K, a licensed insurer
-            authorised by the Monetary Authority of Vietnam (MAS). Travel
-            assistance and claim services are administered by Travel Guard Asia
-            Pacific Pte Ltd (TGAP).
-          </p>
+          <p>Powered by Fermion Merimen.</p>
         </div>
         <div class="footer-col">
           <h5>Travel Insurance</h5>
@@ -470,37 +1095,20 @@
     </footer>
 
     <script>
-      (function () {
-        function toShort(text) {
-          var n = parseInt(text.replace(/,/g, ''), 10);
-          if (isNaN(n)) return text;
-          if (n >= 1000000000) {
-            var t = n / 1000000000;
-            return (t === Math.floor(t) ? t : t.toFixed(1)) + 'B';
-          }
-          if (n >= 1000000) {
-            return Math.round(n / 1000000) + 'M';
-          }
-          return text;
-        }
 
-        var cells = [];
-        document.querySelectorAll('.benefits-table .bt-row td:not(:first-child)').forEach(function (td) {
-          var txt = td.textContent.trim();
-          var short = toShort(txt);
-          if (short !== txt) cells.push({ td: td, full: txt, short: short });
-        });
-
-        function apply() {
-          var isMobile = window.innerWidth <= 700;
-          cells.forEach(function (c) {
-            c.td.textContent = isMobile ? c.short : c.full;
+      // Plan tab switching (mobile)
+      document.querySelectorAll('.plan-tab').forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          var plan = this.dataset.plan;
+          document.querySelectorAll('.plan-tab').forEach(function (t) {
+            t.classList.remove('active');
           });
-        }
-
-        apply();
-        window.addEventListener('resize', apply);
-      })();
+          this.classList.add('active');
+          var table = document.querySelector('.benefits-table');
+          table.classList.remove('show-lite', 'show-classic', 'show-superior', 'show-premier');
+          table.classList.add('show-' + plan);
+        });
+      });
 
       function toggleNav() {
         const nav = document.getElementById("main-nav");
