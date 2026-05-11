@@ -110,7 +110,7 @@
 .bt-row td:first-child  { padding-left: 28px; color: #444; }
 .bt-row td.sub-indent   { padding-left: 44px; color: #555; }
 .bt-row td:not(:first-child) {
-  text-align: right;
+  text-align: center;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
@@ -134,7 +134,7 @@
 
 /* Value cells on section header rows */
 .benefits-table .bt-section td:not(:first-child) {
-  text-align: right;
+  text-align: center;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
   font-weight: 600;
