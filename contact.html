@@ -101,75 +101,84 @@
       </p>
       <p class="required-note"><span>*</span> indicates a required field.</p>
 
-      <div class="cf-row">
-        <div class="cf-field">
-          <label>First Name:<span>*</span></label>
-          <input type="text" />
-        </div>
-        <div class="cf-field">
-          <label>Last Name:<span>*</span></label>
-          <input type="text" />
-        </div>
-      </div>
-      <div class="cf-row">
-        <div class="cf-field">
-          <label>Email Address:<span>*</span></label>
-          <input type="email" />
-        </div>
-        <div class="cf-field">
-          <label>Contact Number:<span>*</span></label>
-          <input type="tel" />
-        </div>
-      </div>
+      <div id="cf-alert" class="cf-alert" style="display:none"></div>
 
-      <hr class="cf-divider" />
-
-      <div class="cf-row">
-        <div class="cf-field">
-          <label>Policy Number (if available):</label>
-          <input type="text" />
+      <form id="contactForm" novalidate>
+        <div class="cf-row">
+          <div class="cf-field">
+            <label for="cf-firstName">First Name:<span>*</span></label>
+            <input type="text" id="cf-firstName" required />
+          </div>
+          <div class="cf-field">
+            <label for="cf-lastName">Last Name:<span>*</span></label>
+            <input type="text" id="cf-lastName" required />
+          </div>
         </div>
-        <div class="cf-field">
-          <label>Type of Enquiry:<span>*</span></label>
-          <select>
-            <option value="">Please select...</option>
-            <option>Claims</option>
-            <option>Compliment</option>
-            <option>Feedback</option>
-            <option>Payment &amp; billing</option>
-            <option>Policy matters</option>
-            <option>Other</option>
-          </select>
+        <div class="cf-row">
+          <div class="cf-field">
+            <label for="cf-email">Email Address:<span>*</span></label>
+            <input type="email" id="cf-email" required />
+          </div>
+          <div class="cf-field">
+            <label for="cf-phone">Contact Number:<span>*</span></label>
+            <input type="tel" id="cf-phone" required />
+          </div>
         </div>
-      </div>
 
-      <div class="cf-full">
-        <label
-          >Please enter your comments and/or questions below :<span
-            >*</span
-          ></label
-        >
-        <textarea></textarea>
-      </div>
+        <hr class="cf-divider" />
 
-      <div class="cf-consent">
-        <p>By clicking on the Submit button: <span>*</span></p>
-        <label>
-          <input type="checkbox" />
-          You have read and agree to be bound by the terms of
-          <a href="#">Zurich's Data Protection Policy</a>
-        </label>
-        <label>
-          <input type="checkbox" />
-          You hereby authorise and consent to Zurich and its affiliated
-          companies or third-party service providers to contact you by email,
-          phone calls and/or SMS to respond to your enquiry.
-        </label>
-      </div>
+        <div class="cf-row">
+          <div class="cf-field">
+            <label for="cf-policy">Policy Number (if available):</label>
+            <input type="text" id="cf-policy" />
+          </div>
+          <div class="cf-field">
+            <label for="cf-enquiry">Type of Enquiry:<span>*</span></label>
+            <select id="cf-enquiry" required>
+              <option value="">Please select...</option>
+              <option>Claims</option>
+              <option>Compliment</option>
+              <option>Feedback</option>
+              <option>Payment &amp; billing</option>
+              <option>Policy matters</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
 
-      <div class="cf-submit">
-        <button type="submit">Submit</button>
-      </div>
+        <div class="cf-full">
+          <label for="cf-comments"
+            >Please enter your comments and/or questions below :<span
+              >*</span
+            ></label
+          >
+          <textarea id="cf-comments" required></textarea>
+        </div>
+
+        <div class="hp-field" aria-hidden="true">
+          <label for="cf-website">Website</label>
+          <input type="text" id="cf-website" name="website" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <div class="cf-consent">
+          <p>By clicking on the Submit button: <span>*</span></p>
+          <label>
+            <input type="checkbox" id="cf-consent1" required />
+            You have read and agree to be bound by the terms of
+            <a href="#">Zurich's Data Protection Policy</a>
+          </label>
+          <label>
+            <input type="checkbox" id="cf-consent2" required />
+            You hereby authorise and consent to Zurich and its affiliated
+            companies or third-party service providers to contact you by email,
+            phone calls and/or SMS to respond to your enquiry.
+          </label>
+        </div>
+
+        <div class="cf-submit">
+          <button type="submit" id="cf-submit-btn">Submit</button>
+        </div>
+      </form>
     </div>
 
     <!-- Support -->
@@ -276,21 +285,6 @@
       </div>
     </footer>
 
-    <script>
-      function toggleNav() {
-        const nav = document.getElementById("main-nav");
-        const header = document.querySelector("header");
-        nav.classList.toggle("open");
-        header.classList.toggle("nav-open");
-      }
-      document
-        .getElementById("main-nav")
-        .addEventListener("click", function (e) {
-          if (e.target.tagName === "A") {
-            this.classList.remove("open");
-            document.querySelector("header").classList.remove("nav-open");
-          }
-        });
-    </script>
+    <script src="/js/contact.js" defer></script>
   </body>
 </html>

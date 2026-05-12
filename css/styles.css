@@ -427,6 +427,11 @@ nav a:hover, nav a.active { background: var(--light-bg); color: var(--teal-dark)
   border-radius: 40px;
 }
 .cf-submit button:hover { background: #002d54; }
+.cf-submit button:disabled { opacity: 0.6; cursor: not-allowed; }
+.cf-alert { padding: 14px 18px; border-radius: 6px; margin-bottom: 20px; font-size: 0.95rem; line-height: 1.5; }
+.cf-alert.success { background: #e6f4ea; border: 1px solid #34a853; color: #1e7e34; }
+.cf-alert.error { background: #fdecea; border: 1px solid #d93025; color: #c5221f; }
+.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .contact-support { background: #f6f6f6; padding: 60px 30px; }
 .contact-support-inner { max-width: 900px; margin: 0 auto; }
 .contact-support-inner h2 { font-size: 1.9rem; color: var(--navy); font-weight: 700; margin-bottom: 32px; }
