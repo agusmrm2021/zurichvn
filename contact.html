@@ -101,8 +101,6 @@
       </p>
       <p class="required-note"><span>*</span> indicates a required field.</p>
 
-      <div id="cf-alert" class="cf-alert" style="display:none"></div>
-
       <form id="contactForm" novalidate>
         <div class="cf-row">
           <div class="cf-field">
@@ -164,16 +162,17 @@
           <p>By clicking on the Submit button: <span>*</span></p>
           <label>
             <input type="checkbox" id="cf-consent1" required />
-            You have read and agree to be bound by the terms of
-            <a href="#">Zurich's Data Protection Policy</a>
+            <span>You have read and agree to be bound by the terms of <a href="#">Zurich's Data Protection Policy</a></span>
           </label>
           <label>
             <input type="checkbox" id="cf-consent2" required />
-            You hereby authorise and consent to Zurich and its affiliated
+            <span>You hereby authorise and consent to Zurich and its affiliated
             companies or third-party service providers to contact you by email,
-            phone calls and/or SMS to respond to your enquiry.
+            phone calls and/or SMS to respond to your enquiry.</span>
           </label>
         </div>
+
+        <div id="cf-alert" class="cf-alert" style="display:none"></div>
 
         <div class="cf-submit">
           <button type="submit" id="cf-submit-btn">Submit</button>
